@@ -1,4 +1,3 @@
-let bg, palette
 let capture
 
 // setup sketch
@@ -9,15 +8,13 @@ async function setup() {
     capture = createCapture(VIDEO)
     capture.size(width, height)
     capture.hide()
-
-    closestColor(100, 100, 100)
 }
 
 function draw() {
-    if (bg && palette) {
+    if (true) {
         capture.loadPixels()
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 500; i++) {
             const x = floor(random(0, width))
             const y = floor(random(0, height))
 
@@ -31,4 +28,25 @@ function draw() {
             circle(x, y, random(2, 5))
         }
     }
+}
+
+
+// function setup(){
+//     createCanvas(windowWidth-50, windowHeight-50);
+//     // capture = createCapture(VIDEO)
+//     // capture.size(width, height)
+//     // capture.hide()
+//     background(0)
+// }
+
+// function draw(){
+//     noStroke()
+//     fill("white")
+//     // circle(width/2, height/2, 5)
+//     circle(mouseX, mouseY, 5)
+// }
+
+function calcFits(){
+    amountX = Math.floor(windowWidth / (tangleWidth + (marginX)));
+    amountY = Math.floor(windowHeight / (tangleHeight + (marginY)));
 }
